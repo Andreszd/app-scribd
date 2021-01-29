@@ -1,11 +1,11 @@
 import CardInfo from "./CardInfo";
-import data from './data'
+import {cardInfo} from './data'
 
 export default function Cards(){
     return (
         <div className="cards">
             {
-                data.map(cardInfo => 
+                cardInfo.map(cardInfo => 
                     <CardInfo {...cardInfo}/>
                 )
             }
