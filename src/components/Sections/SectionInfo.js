@@ -1,11 +1,11 @@
-export default function SectionInfo({title, text, url, alt, modifier, children}){
+export default function SectionInfo({title, text, urlImg, alt, modifier, children}){
 
     if (children) return <section className="section">
         {children}
         </section>
     return (
        <section className={`section section--${modifier}`}>
-            <img src={url} alt={alt} className="section__image"/> 
+            <img src={urlImg} alt={alt} className="section__image"/> 
             <h2 className="section__title">{title}</h2>
             {
                 !Array.isArray(text) ? 

@@ -1,7 +1,7 @@
 import img1 from '../../assets/images/icon-access-anywhere.svg'
 import img2 from '../../assets/images/icon-any-file.svg'
 import img3 from '../../assets/images/icon-collaboration.svg'
-import img4 from '../../assets/images/icon-.svg'
+import img4 from '../../assets/images/icon-security.svg'
 
 export const cardInfo = [
     {
