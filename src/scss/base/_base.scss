@@ -2,5 +2,8 @@
 body{
     margin: 0;
     font-family: $primary-font;
-    background-color: $dark-blue-100;
+    background-color: var(--dark-blue-100);
+}
+img{
+    max-width: 100%;
 }

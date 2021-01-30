@@ -1,18 +1,15 @@
+import Button from "../Button";
+import ListLinks from "../ListLinks";
 import Logo from "../Logo";
 
+import './style.scss'
 export default function Header(){
     return(
         <header className="header">
             <Logo/>
            <nav className="nav">
-               <ul className="main-menu">
-                   <li className="main-menu__item">
-                       <a href="" className="main-menu__link">Features</a></li>
-                   <li className="main-menu__item">
-                       <a href="" className="main-menu__link">Team</a></li>
-                   <li className="main-menu__item">
-                       <a href="" className="main-menu__link">Sign In</a></li>
-               </ul>
+               <ListLinks/>
+               <Button name="Log In"/>
             </nav> 
         </header>
     )
