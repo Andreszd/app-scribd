@@ -1,0 +1,50 @@
+.comments{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    &__item{
+        background-color: var(--dark-blue-500);
+        padding:2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        &:nth-of-type(1){
+            position: relative;
+            &::before{
+                position: absolute;
+                content: '';
+                display: block;
+                top: -30px;
+                left: 10px;
+                width: 40px;
+                height: 50px;
+                background-image: url('../../assets/images/bg-quotes.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+    &__text{
+        color: var(--white);
+        line-height: 1.8;
+    }
+}
+.comment-user{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    &__img{
+        width: 55px;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+    &__title, &__text{
+        color: var(--white);
+        letter-spacing: 3px;
+        line-height: 1.2;
+    }
+    &__title{
+        font-size: 1rem;
+    }
+    &__text{
+        font-size: .8rem;
+    }
+}

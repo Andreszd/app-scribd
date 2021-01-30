@@ -2,7 +2,7 @@ import Button from "../Button"
 
 export default function SectionInfo({title, text, urlImg, alt, modifier, children}){
 
-    if (children) return <section className="section">
+    if (children) return <section className={`section section--${modifier}`}>
         {children}
         </section>
     return (

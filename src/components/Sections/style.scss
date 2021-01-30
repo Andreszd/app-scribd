@@ -1,7 +1,6 @@
 .section{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    padding-top: 2rem;
     &__title, &__text{
         position: relative;
         z-index: 10;
@@ -19,6 +18,7 @@
         margin-bottom: 1rem;
     }
     &--first{
+        padding-top: 2rem;
         text-align: center;
         background-image: url('../../assets/images/bg-curvy-mobile.svg');
         background-repeat: no-repeat;
@@ -36,5 +36,12 @@
             left: 0;
             bottom: 0;
         }
+    }
+    &--second, &--three, &--four{
+        background-color:var(--dark-blue-200);
+    }
+    &--three{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     }
 }
