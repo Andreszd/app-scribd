@@ -1,3 +1,5 @@
+import Button from "../Button"
+
 export default function SectionInfo({title, text, urlImg, alt, modifier, children}){
 
     if (children) return <section className="section">
@@ -15,7 +17,7 @@ export default function SectionInfo({title, text, urlImg, alt, modifier, childre
                     <p className="section__text">{text}</p>    
                 )
             }
-            <button>See how Fylo works</button>
+            <Button text={'Get Started'} modifier={'color-cyan'}/>
        </section> 
     )
 }

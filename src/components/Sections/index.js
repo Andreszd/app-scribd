@@ -2,6 +2,8 @@ import SectionInfo from "./SectionInfo";
 import {section1, section2} from './data'
 import CardsInfo from "../CardsInfo";
 import Comments from '../Comments'
+
+import './style.scss'
 export default function Sections(){
     return (
         <>

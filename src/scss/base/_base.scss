@@ -4,6 +4,9 @@ body{
     font-family: $primary-font;
     background-color: var(--dark-blue-100);
 }
+#root{
+    position: relative;
+}
 img{
     max-width: 100%;
 }

@@ -1,10 +1,10 @@
 export const url = [
     {
-        name: 'Team',
+        name: 'Features',
         path: ''
     },
     {
-        name: 'Features',
+        name: 'Team',
         path: ''
-    }
+    },
 ]

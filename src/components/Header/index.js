@@ -9,7 +9,7 @@ export default function Header(){
             <Logo/>
            <nav className="nav">
                <ListLinks/>
-               <Button name="Log In"/>
+               <Button text="Log In" modifier={'padding-none'}/>
             </nav> 
         </header>
     )

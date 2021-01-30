@@ -1,6 +1,18 @@
 .button{
     color: var(--white);
+    position: relative;
     font-weight: 500;
+    z-index: 10;
     border: none;
+    padding: 0;
     background-color: transparent;
+    border-radius: 30px;
+    padding: 1rem 2rem;
+    &--color-cyan{
+        background-color: var(--cyan);
+        background: linear-gradient(90deg, var(--cyan), var(--blue));
+    }
+    &--padding-none{
+        padding: 0;
+    }
 }
