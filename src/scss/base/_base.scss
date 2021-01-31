@@ -1,4 +1,7 @@
 @import './colors';
+*{
+    box-sizing: border-box;
+}
 body{
     margin: 0;
     font-family: $primary-font;

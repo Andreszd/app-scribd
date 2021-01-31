@@ -1,4 +1,8 @@
 import Logo from '../Logo'
+import Button from '../Button'
+
+import './style.scss'
+
 
 export default function Footer(){
     return (
@@ -10,8 +14,10 @@ export default function Footer(){
                 <p className="form-footer__text">
                     It only takes a minute to sign up and our free starter tier is extremely generous. If you have any question our support team would be happy to help you
                 </p>
-                <input type="email" placeholder="example: correo@correo.com"/>
-                <button>Get Started Free</button>
+                <input type="email" 
+                className="form-footer__input" 
+                placeholder="example: correo@correo.com"/>
+                <Button text="Get Started Free" modifier={["color-cyan", "width-all"]}/>
             </form>
             <Logo/>
             <section className="footer-info">
