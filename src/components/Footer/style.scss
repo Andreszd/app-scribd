@@ -13,6 +13,30 @@
         height: 150px;
         background-color: var(--dark-blue-200);
     }
+
+    &-info{
+        margin: 2rem 0;
+        &__list{
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+        &__img{
+            padding-top: 4px;
+        }
+        &__text{
+            margin-left: 30px;
+            color: var(--white);
+            letter-spacing: 1px;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+        &__item{
+            display: flex;
+            align-items: flex-start;
+        }
+    }
 }
 .form-footer{
     position: relative;

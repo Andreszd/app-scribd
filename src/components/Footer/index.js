@@ -1,8 +1,11 @@
 import Logo from '../Logo'
 import Button from '../Button'
 
-import './style.scss'
+import iconEmail from '../../assets/images/icon-email.svg' 
+import iconSearch from '../../assets/images/icon-location.svg' 
+import iconPhone from '../../assets/images/icon-phone.svg' 
 
+import './style.scss'
 
 export default function Footer(){
     return (
@@ -22,17 +25,17 @@ export default function Footer(){
             <Logo/>
             <section className="footer-info">
                 <ul className="footer-info__list">
-                    <li>
-                        <img src="" alt="" className="footer-info__img"/>
-                        <p className="footer-info__text"></p>
+                    <li className="footer-info__item">
+                        <img src={iconSearch} alt="" className="footer-info__img"/>
+                        <p className="footer-info__text">Lorem ipsum . Accusantium obcaecati itaque quibusdam sit nihil laudantium quia ipsam dignissimos soluta.</p>
                     </li>
-                    <li>
-                        <img src="" alt="" className="footer-info__img"/>
-                        <p className="footer-info__text"></p>
+                    <li className="footer-info__item">
+                        <img src={iconPhone} alt="" className="footer-info__img"/>
+                        <p className="footer-info__text">+1-543-123-4567</p>
                     </li>
-                    <li>
-                        <img src="" alt="" className="footer-info__img"/>
-                        <p className="footer-info__text"></p>
+                    <li className="footer-info__item">
+                        <img src={iconEmail} alt="" className="footer-info__img"/>
+                        <p className="footer-info__text">example@correo.com</p>
                     </li>
                 </ul>
             </section>
