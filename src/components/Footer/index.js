@@ -5,6 +5,9 @@ import iconEmail from '../../assets/images/icon-email.svg'
 import iconSearch from '../../assets/images/icon-location.svg' 
 import iconPhone from '../../assets/images/icon-phone.svg' 
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
+
 import './style.scss'
 
 export default function Footer(){
@@ -40,18 +43,29 @@ export default function Footer(){
                 </ul>
             </section>
             <nav className="footer-nav">
-                <ul className="main-menu">
-                    <li>About Us</li>
-                    <li>Jobs</li>
-                    <li>Press</li>
-                    <li>Blog</li>
+                <ul className="footer-menu">
+                    <li className="footer-menu__item">About Us</li>
+                    <li className="footer-menu__item">Jobs</li>
+                    <li className="footer-menu__item">Press</li>
+                    <li className="footer-menu__item">Blog</li>
                 </ul> 
-                <ul className="main-menu">
-                    <li>Contact Us</li>
-                    <li>Terms</li>
-                    <li>Privacy</li>
+                <ul className="footer-menu">
+                    <li className="footer-menu__item">Contact Us</li>
+                    <li className="footer-menu__item">Terms</li>
+                    <li className="footer-menu__item">Privacy</li>
                 </ul>
             </nav>
+            <div className="social-icons">
+                <span className="social-icons__icon">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                </span>
+                <span className="social-icons__icon">
+                    <FontAwesomeIcon icon={faInstagram }/>
+                </span>
+                <span className="social-icons__icon">
+                    <FontAwesomeIcon icon={faTwitter } />
+                </span>
+            </div>
         </footer>
     )
 }
