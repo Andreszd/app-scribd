@@ -26,6 +26,7 @@ export default function Footer(){
                 <Button text="Get Started Free" modifier={["color-cyan", "width-all"]}/>
             </form>
             <Logo/>
+            <div className="footer-info-container">
             <section className="footer-info">
                 <ul className="footer-info__list">
                     <li className="footer-info__item">
@@ -65,6 +66,7 @@ export default function Footer(){
                 <span className="social-icons__icon">
                     <FontAwesomeIcon icon={faTwitter } />
                 </span>
+            </div>
             </div>
         </footer>
     )
