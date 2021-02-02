@@ -26,6 +26,13 @@
         color: var(--white);
         line-height: 1.8;
     }
+    @media screen and (min-width: 720px){
+        display: flex;
+        justify-content: space-between;
+        &__item{
+            width: 30%;
+        }
+    }
 }
 .comment-user{
     display: flex;

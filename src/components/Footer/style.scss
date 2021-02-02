@@ -110,14 +110,30 @@
             font-size: .8rem;
         }
     }
+    &__submit{
+        width: 100%;
+    }
     @media screen and (min-width: 720px){
         width: 60%;
         margin-left: auto;
         margin-right: auto;
-        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
         &__input{
             width: 60%;
+        }
+        &__input-fields{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        &__submit{
+            width: 30%;
+            font-size: .8rem;
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }
