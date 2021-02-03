@@ -1,4 +1,8 @@
 import ReactDOM from 'react-dom'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
 import './style.scss'
 export function ModalLayout({setShowModal}){
 
@@ -9,7 +13,9 @@ export function ModalLayout({setShowModal}){
     return(
         <div className="modal-container">
             <div className="modal">
-                <button onClick={handleClose} className="modal__btn-closed"></button>
+                <button onClick={handleClose} className="modal__btn-closed">
+                    <FontAwesomeIcon icon = {faTimes}/>
+                </button>
             </div>
         </div>
     )

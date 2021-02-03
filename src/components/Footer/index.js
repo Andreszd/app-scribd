@@ -1,5 +1,4 @@
 import Logo from '../Logo'
-import Button from '../Button'
 
 import iconEmail from '../../assets/images/icon-email.svg' 
 import iconSearch from '../../assets/images/icon-location.svg' 
