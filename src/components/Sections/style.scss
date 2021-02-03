@@ -44,4 +44,29 @@
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
+    @media screen and (min-width: 720px){
+        &--first{
+            background-image: url('../../assets/images/bg-curvy-desktop.svg');
+            background-position: 100% 100%;
+            padding-bottom: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &::after{
+                height: 0;
+            }
+        }
+        &--three{
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+            .section-container{
+                width: 40%;
+            }
+        }
+        &-container{
+            width: 40%;
+        } 
+    }
 }

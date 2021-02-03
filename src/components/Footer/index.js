@@ -20,12 +20,15 @@ export default function Footer(){
                 <p className="form-footer__text">
                     It only takes a minute to sign up and our free starter tier is extremely generous. If you have any question our support team would be happy to help you
                 </p>
-                <input type="email" 
-                className="form-footer__input" 
-                placeholder="example: correo@correo.com"/>
-                <Button text="Get Started Free" modifier={["color-cyan", "width-all"]}/>
+                <div className="form-footer__input-fields">
+                    <input type="email" 
+                    className="form-footer__input" 
+                    placeholder="example: correo@correo.com"/>
+                    <input type="submit" value="Get Started For Free" className="button button--color-cyan form-footer__submit"/>
+                </div>
             </form>
             <Logo/>
+            <div className="footer-info-container">
             <section className="footer-info">
                 <ul className="footer-info__list">
                     <li className="footer-info__item">
@@ -65,6 +68,7 @@ export default function Footer(){
                 <span className="social-icons__icon">
                     <FontAwesomeIcon icon={faTwitter } />
                 </span>
+            </div>
             </div>
         </footer>
     )
