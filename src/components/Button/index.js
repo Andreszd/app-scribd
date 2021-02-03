@@ -1,6 +1,6 @@
 import './style.scss'
 
-export default function Button({text, modifier}){
+export default function Button({text, modifier, onClick}){
     if(Array.isArray(modifier)){
         let nameClassBasic = 'button'
         modifier.forEach(element => nameClassBasic+=` button--${element}`)
@@ -13,6 +13,8 @@ export default function Button({text, modifier}){
     if (!modifier) return <button className="button">{text}</button>
 
     return (
-        <button className={`button button--${modifier}`}>{text}</button>
+        <button 
+        onClick={onClick}
+        className={`button button--${modifier}`}>{text}</button>
     )
 }

@@ -4,14 +4,23 @@
     padding-left: 0;
     list-style: none;
     display: flex;
-    margin-right: 10px;
     &__item{
         justify-content: space-between;
-        margin-left: 10px;
+        margin-right: 10px;
     }
     &__link{
         text-decoration: none;
         color: var(--white);
         font-weight: 500;
+    }
+    @media screen and (min-width: 720px){
+        &__item{
+            margin-right: 2rem; 
+            border-bottom: 1px solid transparent;
+            &:hover{
+                cursor: pointer;
+                border-color: var(--white);
+            }
+        }
     }
 }
