@@ -1,13 +1,16 @@
+import useModal from "../../hooks/useModal";
 import Button from "../Button";
 import ListLinks from "../ListLinks";
 import Logo from "../Logo";
 
 import './style.scss'
 export default function Header(){
+    const  {setShowModal, RenderModal} = useModal()
     const handlerClick = evt =>{
-        console.log('clicked')
+        setShowModal(true)
     }
     return(
+        <>
         <header className="header">
             <Logo/>
            <nav className="nav">
@@ -18,5 +21,7 @@ export default function Header(){
                />
             </nav> 
         </header>
+        <RenderModal/>
+        </>
     )
 }
