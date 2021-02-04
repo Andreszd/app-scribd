@@ -4,6 +4,13 @@ import Modal from '../components/Modal';
 export default function useModal(){
     const [showModal, setShowModal] = useState(false)
 
+    const openModal = ()=>{
+        if(showModal){
+            setShowModal(false) 
+            setShowModal(true)
+        }
+    }
+
     const RenderModal =({children})=>{
         return (
             showModal ? 
@@ -11,5 +18,5 @@ export default function useModal(){
             : null
         )
     }
-    return {RenderModal, setShowModal}
+    return {RenderModal, setShowModal, showModal, openModal}
 }

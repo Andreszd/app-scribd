@@ -1,9 +1,9 @@
 import './style.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faKey, faBox, faInbox } from '@fortawesome/free-solid-svg-icons'
+import { faKey, faUser, faInbox } from '@fortawesome/free-solid-svg-icons'
 
-export default function Input({placeholder, type, value, onKeywoard} = {}){
+export default function Input({placeholder, type, value, onKeywoard, name} = {}){
 
     switch(type){
         case 'submit':
@@ -31,6 +31,13 @@ export default function Input({placeholder, type, value, onKeywoard} = {}){
                     type={type} className="field-container__input"/>
                     </div>
         default: 
-            return null;
+            return  <div className="field-container">
+                    <FontAwesomeIcon  icon={faUser} 
+                    className='field-container__icon'/>
+                    <input placeholder={placeholder} 
+                    onChange = {onKeywoard}
+                    name={name} 
+                    type={type} className="field-container__input"/>
+                    </div>
     }
 }

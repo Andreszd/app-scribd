@@ -9,7 +9,6 @@ import Logo from "../Logo";
 import './style.scss'
 export default function Header(){
     const  {setShowModal, RenderModal} = useModal()
-    const [form, changeForm] = useState(false)
 
     const handlerClick = evt =>{
         setShowModal(true)
@@ -27,12 +26,7 @@ export default function Header(){
             </nav> 
         </header>
         <RenderModal>
-            {
-                !form ? 
-                <FormLogin changeForm={changeForm}/>
-                :
-                <FormRegister changeForm={changeForm}/>
-            }
+            <FormLogin />
         </RenderModal>
         </>
     )
