@@ -5,11 +5,22 @@ export default function useForm(form){
     const [bodyForm, setBodyForm] = useState(form)
 
     const handlerChange = evt =>{
-        console.log(evt.target.value)
         setBodyForm({
             ...bodyForm,
             [evt.target.name] : evt.target.value
         })
     }
-    return { handlerChange }
+
+    const validatyFields = ()=>{
+        const errors = {}
+        const keys = Object.keys(bodyForm)
+        console.log(Object.keys(bodyForm))
+        console.log(Object.values(bodyForm))
+        Object.values(bodyForm).forEach((prop, idx) => {
+            if(keys[idx] === 'email') {
+                console.log('validate email')
+            }
+        })
+    }
+    return { handlerChange, validatyFields }
 }

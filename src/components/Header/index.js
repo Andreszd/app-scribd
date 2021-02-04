@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import useModal from "../../hooks/useModal";
 import Button from "../Button";
-import Form from "../Form";
 import FormLogin from "../Form/FormLogin";
+import FormRegister from '../Form/FormRegister';
 import ListLinks from "../ListLinks";
 import Logo from "../Logo";
 
 import './style.scss'
 export default function Header(){
     const  {setShowModal, RenderModal} = useModal()
+    const [form, changeForm] = useState(false)
+
     const handlerClick = evt =>{
         setShowModal(true)
     }
@@ -24,7 +27,12 @@ export default function Header(){
             </nav> 
         </header>
         <RenderModal>
-            <FormLogin />
+            {
+                !form ? 
+                <FormLogin changeForm={changeForm}/>
+                :
+                <FormRegister changeForm={changeForm}/>
+            }
         </RenderModal>
         </>
     )
