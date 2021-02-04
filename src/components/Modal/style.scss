@@ -1,14 +1,21 @@
 .modal{
-    background-color: #fff;
-    width: 100px;
-    height: 100px;
-    padding: 1rem;
+    width: 100vw;
+    height: 500px;
+    background-color: var(--dark-blue-100);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 2rem 1rem;
     &__btn-closed{
         display: block;
         position: relative;
-        padding: 1rem; 
         border: none;
-        background-color: #c2c2c2;
+        background-color: transparent;
+        color: var(--white);
+    }    
+    @media screen and (min-width: 720px){
+        border-radius: 1rem;
+        padding: 2rem;
+        width: 450px;
     }
 }
 .modal-container{
@@ -19,9 +26,12 @@
     height: 100vh;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: center;
     background-color: rgba(0,0,0,.5);
     backdrop-filter: blur(1px);
+    @media screen and (min-width: 720px){
+        justify-content: center;   
+    }
 }

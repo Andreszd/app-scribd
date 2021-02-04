@@ -1,5 +1,7 @@
 import useModal from "../../hooks/useModal";
 import Button from "../Button";
+import Form from "../Form";
+import FormLogin from "../Form/FormLogin";
 import ListLinks from "../ListLinks";
 import Logo from "../Logo";
 
@@ -21,7 +23,9 @@ export default function Header(){
                />
             </nav> 
         </header>
-        <RenderModal/>
+        <RenderModal>
+            <FormLogin />
+        </RenderModal>
         </>
     )
 }

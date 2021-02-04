@@ -1,0 +1,17 @@
+.form{
+    &__title, &__text{
+        text-align: center;
+        color: var(--white);
+    }
+    &__text{
+        margin-bottom: 1.5rem;
+    }
+    &__footer{
+        padding: 1rem;
+    }
+    &__link{
+        color: var(--white);
+        font-weight: 600;
+        text-decoration: none;
+    }
+}

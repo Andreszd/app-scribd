@@ -7,9 +7,7 @@ export default function useModal(){
     const RenderModal =({children})=>{
         return (
             showModal ? 
-            <Modal setShowModal={setShowModal}>
-                {children}
-            </Modal>
+            <Modal setShowModal={setShowModal} children = {children}/>
             : null
         )
     }

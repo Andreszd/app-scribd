@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 import './style.scss'
-export function ModalLayout({setShowModal}){
+export function ModalLayout({setShowModal, children}){
 
     const handleClose = evt =>{
         setShowModal(false)
@@ -16,6 +16,7 @@ export function ModalLayout({setShowModal}){
                 <button onClick={handleClose} className="modal__btn-closed">
                     <FontAwesomeIcon icon = {faTimes}/>
                 </button>
+                {children}
             </div>
         </div>
     )
