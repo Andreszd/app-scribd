@@ -4,15 +4,19 @@
     position: relative;
     &__input{
         box-sizing: border-box;
-        padding-top: .7rem ;
-        padding-bottom: .7rem;
+        padding-top: .8rem ;
+        padding-bottom: .8rem;
         width: 100%;
         padding-left: 2.5rem;
-        border:2px solid #c2c2c2;
+        border:1px solid #c2c2c2;
         border-radius: 5px;
         outline: none;
         background-color: transparent;
         color: var(--white);
+        &::placeholder{
+            color: var(--white);
+            font-weight: 300;
+        }
         &-submit{
             width: 100%;
             padding: .8rem;
@@ -21,13 +25,13 @@
             font-weight: 600;
             color: var(--white);
             background: linear-gradient(90deg, var(--cyan), var(--blue));            
-            &:invalid{
-                border-color: red;
-            }
             @media screen and (min-width: 720px){
                 cursor: pointer;
             }
         }
+        &:invalid{
+            border-color: red;
+       }
     }
     &__icon{
         text-align: center;

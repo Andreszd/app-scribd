@@ -2,9 +2,9 @@ import Input from "../Input";
 
 import './style.scss'
 
-export default function Form({children}){
+export default function Form({children, onSubmit}){
     return (
-        <form className = "form"> 
+        <form className = "form" onSubmit={onSubmit}> 
             {children}
         </form>
     )
