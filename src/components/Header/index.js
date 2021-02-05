@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import useModal from "../../hooks/useModal";
 import Button from "../Button";
-import FormLogin from "../Form/FormLogin";
-import FormRegister from '../Form/FormRegister';
+import FormLoginRegister from '../Form/FormLoginRegister';
 import ListLinks from "../ListLinks";
 import Logo from "../Logo";
 
@@ -26,7 +24,7 @@ export default function Header(){
             </nav> 
         </header>
         <RenderModal>
-            <FormLogin />
+            <FormLoginRegister />
         </RenderModal>
         </>
     )

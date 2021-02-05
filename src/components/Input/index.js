@@ -18,17 +18,17 @@ export default function Input({placeholder, type, value, onKeywoard, name} = {})
                     onChange = {onKeywoard}
                     name={type} 
                     type={type} 
-                    className="field-container__input"/>
+                    className="field-container__input field-container__input--error"/>
                 <FontAwesomeIcon  icon={faKey} className='field-container__icon'/>
             </div> 
         case 'email':
             return  <div className="field-container">
-                    <FontAwesomeIcon  icon={faInbox} 
-                    className='field-container__icon'/>
                     <input placeholder={placeholder} 
                     onChange = {onKeywoard}
                     name={type} 
                     type={type} className="field-container__input"/>
+                    <FontAwesomeIcon  icon={faInbox} 
+                    className='field-container__icon'/>
                     </div>
         default: 
             return  <div className="field-container">

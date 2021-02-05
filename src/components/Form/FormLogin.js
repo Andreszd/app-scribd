@@ -1,10 +1,8 @@
 import Form from ".";
 import useForm from "../../hooks/useForm";
-import useModal from "../../hooks/useModal";
 import Input from "../Input";
-import FormRegister from "./FormRegister";
 
-export default function FormLogin({ }){
+export default function FormLogin({ changeForm }){
     const bodyForm = {
         email:'', 
         password:''
@@ -18,7 +16,7 @@ export default function FormLogin({ }){
 
     const handlerClick = evt =>{
         evt.preventDefault()
-        console.log('ola')
+        changeForm(false)
     }
     return(
         <>
@@ -41,9 +39,6 @@ export default function FormLogin({ }){
                 >Sign Up</button></p>
             </footer>
         </Form>
-        <RenderModal>
-            <FormRegister/>
-        </RenderModal>
         </>
     )
 }

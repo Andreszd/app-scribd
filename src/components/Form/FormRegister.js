@@ -17,7 +17,7 @@ export default function FormRegister({changeForm}){
     }
     const handlerClick = evt=>{
         evt.preventDefault()
-        changeForm(false)
+        changeForm(true)
     }
     return (
         <Form onSubmit={handlerSubmit}>

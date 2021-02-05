@@ -6,8 +6,8 @@ export default function Cards(){
     return (
         <div className="cards">
             {
-                cardInfo.map(cardInfo => 
-                    <CardInfo {...cardInfo}/>
+                cardInfo.map((cardInfo, idx) => 
+                    <CardInfo {...cardInfo} key={idx}/>
                 )
             }
         </div>
