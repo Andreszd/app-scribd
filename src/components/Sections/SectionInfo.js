@@ -14,8 +14,8 @@ export default function SectionInfo({title, text, urlImg, alt, modifier, childre
                     !Array.isArray(text) ? 
                         <p className="section__text">{text}</p>
                     :
-                    text.map(text => 
-                        <p className="section__text">{text}</p>    
+                    text.map((text, idx) => 
+                        <p className="section__text" key={idx}>{text}</p>    
                     )
                 }
                 <Button text={'Get Started'} modifier={'color-cyan'}/>

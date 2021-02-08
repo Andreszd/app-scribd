@@ -9,11 +9,11 @@ export default function FormRegister({changeForm}){
         email:'', 
         password:''
     }
-    const { handlerChange, validatyFields } = useForm(bodyForm)
+    const { handlerChange, validateFields } = useForm(bodyForm)
 
     const handlerSubmit = evt =>{
         evt.preventDefault()
-        validatyFields()
+        validateFields()
     }
     const handlerClick = evt=>{
         evt.preventDefault()
@@ -36,12 +36,12 @@ export default function FormRegister({changeForm}){
             <Input type="password" 
             onKeywoard={handlerChange} 
             placeholder="Password"/> 
-            <Input type="submit" value="Sign In"/> 
+            <Input type="submit" value="Sign Up"/> 
             <footer className="form__footer">
                 <p className="form__text">Already registered ? 
                 <button className="form__button"
                     onClick={handlerClick}
-                >Sign in</button></p>
+                >Sign In</button></p>
             </footer>
         </Form>
     )

@@ -6,8 +6,8 @@ export default function Comments(){
     return (
         <div className="comments">
             {
-                dataComment.map(comment =>
-                    <CardComment {...comment}/>
+                dataComment.map((comment, idx) =>
+                    <CardComment key ={idx} {...comment}/>
                 )
             }
         </div>

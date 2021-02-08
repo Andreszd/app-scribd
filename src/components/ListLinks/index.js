@@ -6,7 +6,7 @@ export default function ListLinks(){
     return (
         <ul className="main-menu">
             {
-                url.map(link => <Link {...link}/>)
+                url.map((link, idx) => <Link key={ idx } {...link}/>)
             }
         </ul>
     )

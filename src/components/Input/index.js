@@ -1,9 +1,11 @@
-import './style.scss'
-
+import  { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKey, faUser, faInbox } from '@fortawesome/free-solid-svg-icons'
 
-export default function Input({placeholder, type, value, onKeywoard, name} = {}){
+import './style.scss'
+
+export default function Input({placeholder, type, value, onKeywoard, name, error} = {}){
+    console.log(error)
 
     switch(type){
         case 'submit':
@@ -14,30 +16,38 @@ export default function Input({placeholder, type, value, onKeywoard, name} = {})
             value = {value}/>
         case 'password':
             return  <div className="field-container">
-                    <input placeholder={placeholder} 
-                    onChange = {onKeywoard}
-                    name={type} 
-                    type={type} 
-                    className="field-container__input field-container__input--error"/>
-                <FontAwesomeIcon  icon={faKey} className='field-container__icon'/>
-            </div> 
+                        <input placeholder={placeholder} 
+                        onChange = {onKeywoard}
+                        name={type} 
+                        type={type} 
+                        className="field-container__input field-container__input--error"/>
+                        <FontAwesomeIcon  icon={faKey} className='field-container__icon'/>
+                    </div> 
         case 'email':
-            return  <div className="field-container">
-                    <input placeholder={placeholder} 
-                    onChange = {onKeywoard}
-                    name={type} 
-                    type={type} className="field-container__input"/>
-                    <FontAwesomeIcon  icon={faInbox} 
-                    className='field-container__icon'/>
+            return  (
+                <>
+                    <div className="field-container">
+                        <input placeholder={placeholder} 
+                        onChange = {onKeywoard}
+                        name={type} 
+                        type={type} className="field-container__input"/>
+                        <FontAwesomeIcon  icon={faInbox} 
+                        className='field-container__icon'/>
                     </div>
+                </>    
+            )
         default: 
-            return  <div className="field-container">
-                    <FontAwesomeIcon  icon={faUser} 
-                    className='field-container__icon'/>
-                    <input placeholder={placeholder} 
-                    onChange = {onKeywoard}
-                    name={name} 
-                    type={type} className="field-container__input"/>
-                    </div>
+            return(
+                    <>  
+                        <div className="field-container">
+                            <FontAwesomeIcon  icon={faUser} 
+                            className='field-container__icon'/>
+                            <input placeholder={placeholder} 
+                            onChange = {onKeywoard}
+                            name={name} 
+                            type={type} className="field-container__input"/>
+                        </div>
+                    </>
+            )
     }
 }
