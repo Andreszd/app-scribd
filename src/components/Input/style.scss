@@ -29,6 +29,12 @@
                 cursor: pointer;
             }
         }
+        &--error{
+            border-color: red;
+        }
+        &--error + &__icon{
+            color: red;
+        }
         &:invalid{
             border-color: red;
        }
@@ -43,5 +49,12 @@
         top: 50%;
         transform: translateY(-50%);
         color: var(--white);
+    }
+    &__message-error{
+        display: inline-block;
+        font-size: .9rem;
+        font-weight: 800;
+        color: red;
+        margin-bottom:1rem ;
     }
 }

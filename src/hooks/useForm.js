@@ -30,17 +30,22 @@ export default function useForm(form){
         }
         return error
     }
-    const validateField = (typeField = '', content, errors = [])=>{
+    const validateField = (typeField = '', content, errors = {})=>{
+        let error = null 
         if(typeField === 'email') {
-            errors.push(validateEmail(content))
+            error = validateEmail(content)
+            //errors.push(validateEmail(content))
+            errors['email'] = error
         }
         if(typeField === 'password'){
-            errors.push(validatePassword(content))
+            error = validatePassword(content)
+            //errors.push(validatePassword(content))
+            errors['password'] = error
         } 
 
     }
     const validateFields = ()=>{
-        const errors = [] 
+        const errors = {} 
         const keys = Object.keys(bodyForm)
         Object.values(bodyForm).forEach((value, idx) => {
             validateField(keys[idx], value, errors)

@@ -16,6 +16,7 @@ export default function FormLogin({ changeForm }){
     const handlerSubmit = evt =>{
         evt.preventDefault()
         const listErrors = validateFields()
+        console.log(listErrors)
         setErrors(listErrors)
     }
 
@@ -29,12 +30,12 @@ export default function FormLogin({ changeForm }){
             <h2 className="form__title">Hello !</h2> 
             <p className="form__text">Sign into your account here.</p>
             <Input placeholder="example: correo@correo.com" 
-            error = {errors}
+            error = {errors['email']}
             type="email"
             onKeywoard={handlerChange} 
             /> 
             <Input type="password" 
-            error = {errors}
+            error = {errors['password']}
             onKeywoard={handlerChange} 
             placeholder="password"/> 
             <Input type="submit" value="Sign In"/> 
