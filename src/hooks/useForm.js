@@ -3,6 +3,7 @@ import { useState } from 'react';
 export default function useForm(form){
 
     const [bodyForm, setBodyForm] = useState(form)
+    const [errors, setErrors] = useState({})
 
     const handlerChange = evt =>{
         setBodyForm({
@@ -30,6 +31,16 @@ export default function useForm(form){
         }
         return error
     }
+    const validateUsername = value =>{
+        let error = {}
+        error.type = 'username'
+        error.count = 0
+        if( value.trim().length === 0){
+            error.message = 'Field not be empty' 
+            error.count+=1
+        }
+        return error
+    }
     const validateField = (typeField = '', content, errors = {})=>{
         let error = null 
         if(typeField === 'email') {
@@ -42,6 +53,10 @@ export default function useForm(form){
             //errors.push(validatePassword(content))
             errors['password'] = error
         } 
+        if(typeField === 'username'){
+            error = validateUsername(content) 
+            errors['username'] = error
+        }
 
     }
     const validateFields = ()=>{
@@ -50,7 +65,7 @@ export default function useForm(form){
         Object.values(bodyForm).forEach((value, idx) => {
             validateField(keys[idx], value, errors)
         })
-        return errors
+        setErrors(errors)
     }
-    return { handlerChange, validateFields }
+    return { handlerChange, validateFields, errors }
 }

@@ -10,14 +10,12 @@ export default function FormLogin({ changeForm }){
         password:''
     }
 
-    const { handlerChange, validateFields } = useForm(bodyForm)
-    const [errors, setErrors] = useState([])
+
+    const { handlerChange, validateFields, errors } = useForm(bodyForm)
 
     const handlerSubmit = evt =>{
         evt.preventDefault()
-        const listErrors = validateFields()
-        console.log(listErrors)
-        setErrors(listErrors)
+        validateFields()
     }
 
     const handlerClick = evt =>{
@@ -26,7 +24,7 @@ export default function FormLogin({ changeForm }){
     }
     return(
         <>
-        <Form onSubmit={handlerSubmit}>
+        <Form onSubmit={handlerSubmit} >
             <h2 className="form__title">Hello !</h2> 
             <p className="form__text">Sign into your account here.</p>
             <Input placeholder="example: correo@correo.com" 

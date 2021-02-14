@@ -9,7 +9,7 @@ export default function FormRegister({changeForm}){
         email:'', 
         password:''
     }
-    const { handlerChange, validateFields } = useForm(bodyForm)
+    const { handlerChange, validateFields, errors } = useForm(bodyForm)
 
     const handlerSubmit = evt =>{
         evt.preventDefault()
@@ -25,15 +25,18 @@ export default function FormRegister({changeForm}){
             <p className="form__text">Sign up to collect your Files.</p>
             <Input placeholder="Full Name" 
             name="username"
-            type="text"
+            error = {errors['username']}
+            type="username"
             icon="user"
             onKeywoard={handlerChange} 
             /> 
             <Input placeholder="example: correo@correo.com" 
             type="email"
+            error = {errors['email']}
             onKeywoard={handlerChange} 
             /> 
             <Input type="password" 
+            error = {errors['password']}
             onKeywoard={handlerChange} 
             placeholder="Password"/> 
             <Input type="submit" value="Sign Up"/> 

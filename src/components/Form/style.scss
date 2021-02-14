@@ -23,10 +23,13 @@
         outline: none;
     }
     @media screen and (min-width: 720px){
+        &__button{
+            border-bottom: 1px solid transparent;
+        }
         &__link:hover,
         &__button:hover{
             cursor: pointer;
-            border-bottom: 1px solid var(--white);
+            border-color: var(--white);
         }
     }
 }
