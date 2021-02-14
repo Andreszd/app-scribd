@@ -1,4 +1,3 @@
-import { useState } from 'react';
 
 import Form from ".";
 import useForm from "../../hooks/useForm";
@@ -11,7 +10,7 @@ export default function FormLogin({ changeForm }){
     }
 
 
-    const { handlerChange, validateFields, errors } = useForm(bodyForm)
+    const { handlerChange, validateFields, errors, existErrors } = useForm(bodyForm)
 
     const handlerSubmit = evt =>{
         evt.preventDefault()

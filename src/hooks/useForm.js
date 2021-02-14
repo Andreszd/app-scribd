@@ -59,13 +59,25 @@ export default function useForm(form){
         }
 
     }
+    const hasAnyError = (errors = {}) =>{
+        const listErrors = Object.values(errors).filter(error => error.count > 0)
+        return listErrors.length > 0
+    }
     const validateFields = ()=>{
         const errors = {} 
         const keys = Object.keys(bodyForm)
         Object.values(bodyForm).forEach((value, idx) => {
             validateField(keys[idx], value, errors)
         })
-        setErrors(errors)
+        if(hasAnyError(errors)){
+            setErrors(errors)
+        }else{
+            setErrors({})
+        }
     }
-    return { handlerChange, validateFields, errors }
+    const existErrors = ()=>{
+        console.log(errors)
+        return hasAnyError(errors) 
+    }
+    return { handlerChange, validateFields, errors, existErrors }
 }
