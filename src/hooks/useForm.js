@@ -73,6 +73,10 @@ export default function useForm(form, request){
         }
 
     }
+    const hasAnyError = (errors = {}) =>{
+        const listErrors = Object.values(errors).filter(error => error.count > 0)
+        return listErrors.length > 0
+    }
     const validateFields = ()=>{
         const errors = {} 
         const keys = Object.keys(bodyForm)
