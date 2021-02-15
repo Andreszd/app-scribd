@@ -1,7 +1,6 @@
-import  {  useState ,useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faKey, faUser, faInbox } from '@fortawesome/free-solid-svg-icons'
+import { faKey, faUser, faInbox, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import './style.scss'
 
@@ -81,6 +80,20 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                                 </span>
                             : null
                         }
+                </>
+            )
+        case 'search':
+            return (
+                <>
+                    <div className='field-container'>
+                        <FontAwesomeIcon  icon={faSearch} 
+                        className='field-container__icon'/>
+                        <input placeholder={placeholder} 
+                        onChange = {onKeywoard}
+                        name={type} 
+                        type="text" 
+                        className={existError() ? `field-container__input field-container__input--error`: 'field-container__input'}/>
+                    </div>
                 </>
             )
         default: 

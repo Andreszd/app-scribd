@@ -5,7 +5,7 @@ import ListLinks from "../ListLinks";
 import Logo from "../Logo";
 
 import './style.scss'
-export default function Header(){
+export default function Header({navigation: Navigation}){
     const  {setShowModal, RenderModal} = useModal()
 
     const handlerClick = evt =>{
@@ -15,13 +15,16 @@ export default function Header(){
         <>
         <header className="header">
             <Logo/>
-           <nav className="nav">
-               <ListLinks/>
-               <Button text="Log In" 
-               modifier={'padding-none'}
-               onClick={handlerClick}
-               />
-            </nav> 
+            {
+                Navigation ? <Navigation/>:
+                <nav className="nav">
+                    <ListLinks/>
+                    <Button text="Log In" 
+                    modifier={'padding-none'}
+                    onClick={handlerClick}
+                    />
+                </nav> 
+            }
         </header>
         <RenderModal>
             <FormLoginRegister />

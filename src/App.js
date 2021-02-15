@@ -1,8 +1,16 @@
+import { Switch } from 'react-router-dom';
+import Home from './Pages/Home';
 import LadingPage from './Pages/LadingPage';
+import { PrivateRoute, PublicRoute } from './routes';
 import './scss/style.scss'
 function App() {
   return (
-    <LadingPage/>
+    <>
+    <Switch>
+      <PublicRoute  component={LadingPage} path="/" exact/>
+      <PrivateRoute component={Home} path="/home" exact/>
+    </Switch>
+    </>
   );
 }
 
