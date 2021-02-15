@@ -1,9 +1,23 @@
 import { useState } from 'react';
 
-export default function useForm(form){
+export default function useForm(form, request){
 
     const [bodyForm, setBodyForm] = useState(form)
     const [errors, setErrors] = useState({})
+
+
+    const existErrors = (value = {})=>{
+        return Object.values(value).filter(error => error.count > 0).length > 0
+    }
+
+    const handlerSubmit = evt =>{
+        evt.preventDefault()
+        const errors = validateFields()
+        setErrors(errors)
+        if(!existErrors(errors)){
+            request(bodyForm)
+        }
+    }
 
     const handlerChange = evt =>{
         setBodyForm({
@@ -65,7 +79,7 @@ export default function useForm(form){
         Object.values(bodyForm).forEach((value, idx) => {
             validateField(keys[idx], value, errors)
         })
-        setErrors(errors)
+        return errors
     }
-    return { handlerChange, validateFields, errors }
+    return { handlerChange, validateFields, errors, handlerSubmit }
 }

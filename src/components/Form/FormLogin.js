@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import Form from ".";
 import useForm from "../../hooks/useForm";
 import Input from "../Input";
@@ -10,13 +8,10 @@ export default function FormLogin({ changeForm }){
         password:''
     }
 
-
-    const { handlerChange, validateFields, errors } = useForm(bodyForm)
-
-    const handlerSubmit = evt =>{
-        evt.preventDefault()
-        validateFields()
-    }
+    const { handlerChange, errors, handlerSubmit } = 
+    useForm(bodyForm, (response)=>{
+        console.log(response)
+    })
 
     const handlerClick = evt =>{
         evt.preventDefault()
@@ -24,7 +19,8 @@ export default function FormLogin({ changeForm }){
     }
     return(
         <>
-        <Form onSubmit={handlerSubmit} >
+        <Form onSubmit={handlerSubmit} 
+            >
             <h2 className="form__title">Hello !</h2> 
             <p className="form__text">Sign into your account here.</p>
             <Input placeholder="example: correo@correo.com" 

@@ -9,12 +9,11 @@ export default function FormRegister({changeForm}){
         email:'', 
         password:''
     }
-    const { handlerChange, validateFields, errors } = useForm(bodyForm)
+    const { handlerChange, errors, handlerSubmit } = 
+    useForm(bodyForm, (request)=>{
+        console.log(request)
+    })
 
-    const handlerSubmit = evt =>{
-        evt.preventDefault()
-        validateFields()
-    }
     const handlerClick = evt=>{
         evt.preventDefault()
         changeForm(true)
