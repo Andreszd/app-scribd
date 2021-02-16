@@ -1,5 +1,6 @@
 .button{
     color: var(--white);
+    display: flex;
     position: relative;
     font-weight: 500;
     z-index: 10;
@@ -17,7 +18,13 @@
     &--width-all{
         width: 100%;
     }
+    &--hidden-min-width{
+        display: none;
+    }
     @media screen and (min-width: 720px){
         cursor: pointer;
+        &--hidden-min-width{
+            display: block;
+        }
     }
 }
