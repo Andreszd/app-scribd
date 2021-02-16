@@ -1,9 +1,10 @@
-import Input from "../Input";
+import Search from "../Search";
 
+import './style.scss'
 export default function NavUser({}){
     return (
        <nav className="nav-user">
-            <Input type="search"/>
+           <Search/>
        </nav> 
     )
 }
