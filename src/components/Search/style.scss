@@ -8,19 +8,26 @@
         border-top-left-radius:25px ;
         border-bottom-left-radius:25px ;
         background-color: transparent;
-        border: 1.2px solid #c2c2c2;
+        border: 1px solid #c2c2c2;
         border-right: none;
         font-size: .8rem;
         color: var(--white);
+        &::placeholder{
+            color: var(--white);
+        }
+        &::focus &::placeholder{
+            color: #c2c2c2;
+        }
     }
     &__button{
         width: 50px;  
-        border: 1px solid var(--white);
-        border-left: none;
+        border: 1px solid #c2c2c2;
+        border-left: 0;
         box-sizing: border-box;
+        background: linear-gradient(90deg, var(--blue), var(--cyan));
         border-top-right-radius:25px ;
         border-bottom-right-radius:25px ;
-        background-color: var(--cyan);
+        background-color: transparent;
         font-size: 1em;
         color: var(--white);
         @media screen and (min-width: 720px){

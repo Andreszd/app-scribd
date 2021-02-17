@@ -6,6 +6,7 @@ export default function Button({text, modifier, onClick, icon}){
         modifier.forEach(element => nameClassBasic+=` button--${element}`)
         return (
             <button
+                onClick={onClick}
                 className={nameClassBasic} 
             >
                 {icon}
@@ -13,7 +14,9 @@ export default function Button({text, modifier, onClick, icon}){
             </button>
         )
     }
-    if (!modifier) return <button className="button">
+    if (!modifier) return <button 
+       onClick={onclick} 
+    className="button">
         {icon}
         {text}
     </button>
