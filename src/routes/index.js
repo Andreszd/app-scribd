@@ -1,18 +1,18 @@
-import { Redirect } from "react-router-dom"
+import { Redirect, Route } from "react-router-dom"
 
 const authenticate = true
 export function PublicRoute({component: Component, ...res}){
     return(
         !authenticate ? 
-        <Component {...res}/>
+        <Route  component={Component} {...res}/>
         : <Redirect to="/home"/>
     )
 }
 
-export function PrivateRoute({component: Component, ...res}){
+export function PrivateRoute({component: Component, ...options}){
     return(
         authenticate ? 
-        <Component {...res}/>
+        <Route {...options} component={Component} />
         : <Redirect to="/"/>
     )
 }

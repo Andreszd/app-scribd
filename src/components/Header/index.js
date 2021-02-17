@@ -5,7 +5,7 @@ import ListLinks from "../ListLinks";
 import Logo from "../Logo";
 
 import './style.scss'
-export default function Header({navigation: Navigation}){
+export default function Header({navigation: Navigation }){
     const  {setShowModal, RenderModal} = useModal()
 
     const handlerClick = evt =>{

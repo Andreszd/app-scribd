@@ -1,12 +1,14 @@
 import Header from "../components/Header"
 import NavUser from "../components/NavUser"
+import Upload from "./Upload"
+import { PrivateRoute } from "../routes"
 
 export default function Home(){
 
     return (
         <>
         <Header navigation={NavUser}/>
-        <h1>Hi user...!</h1>
+        <PrivateRoute component={Upload} path="/home/upload" />
         </>
     )
 }
