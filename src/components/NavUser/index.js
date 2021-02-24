@@ -1,7 +1,7 @@
 import  { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faFileUpload } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faFileUpload, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import Button from '../Button'
 import Search from "../Search";
@@ -15,11 +15,19 @@ export default function NavUser({}){
     const [openMenu, setOpenMenu] = useState(false)
 
     const showDropDown = evt =>{
+        console.log('clicked')
         openMenu ? setOpenMenu(false) : setOpenMenu(true)
     }    
     return (
        <nav className="nav-user">
            <Search/>
+           <Button
+            onClick={showDropDown}
+            modifier="hidden-view-desktop"
+            modifier={['hidden-view-desktop','padding-left']}
+            icon={<FontAwesomeIcon icon={faBars}/>}
+           />
+           <div className="nav-user__buttons">
            <Button 
            onClick={()=> history.push('/home/upload')}
            text="Upload" 
@@ -29,11 +37,12 @@ export default function NavUser({}){
            <Button 
             onClick={showDropDown}
             icon={<FontAwesomeIcon icon={faUser}/>} 
-            modifier="hidden-min-width"/>
+            />
             {
                 openMenu ? <UserMenu/> : null 
             }
             </div>
+           </div>
        </nav> 
     )
 }

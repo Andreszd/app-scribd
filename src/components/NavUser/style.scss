@@ -3,6 +3,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &__buttons{
+        display: none;
+    }
+    @media screen and (min-width: 720px){
+        &__buttons{
+            display: flex;
+        }
+    }
 }
 .profile-icon{
     position: relative;

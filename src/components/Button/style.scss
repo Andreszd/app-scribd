@@ -21,10 +21,20 @@
     &--hidden-min-width{
         display: none;
     }
+    &--padding-left{
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+        padding-left: 1rem;
+    }
     @media screen and (min-width: 720px){
         cursor: pointer;
         &--hidden-min-width{
             display: block;
         }
+        &--hidden-view-desktop{
+             display: none;
+        }
+        
     }
 }

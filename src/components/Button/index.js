@@ -14,19 +14,22 @@ export default function Button({text, modifier, onClick, icon}){
             </button>
         )
     }
-    if (!modifier) return <button 
-       onClick={onclick} 
-    className="button">
-        {icon}
-        {text}
-    </button>
-
     return (
-        <button 
-        onClick={onClick}
-        className={`button button--${modifier}`}>
+        <>
+        {
+            modifier ? 
+            <button 
+                onClick={onClick}
+                className={`button button--${modifier}`}>
             {icon}
             {text}
-        </button>
+            </button>:
+            <button 
+            onClick={onClick} className="button">
+               {icon}
+               {text}
+            </button>
+        }
+        </>
     )
 }
