@@ -12,17 +12,15 @@ import './style.scss'
 export default function NavUser({}){
     const history = useHistory()
 
-    const [openMenu, setOpenMenu] = useState(false)
+    const [showMenu, setShowMenu] = useState(false)
 
     const showDropDown = evt =>{
-        console.log('clicked')
-        openMenu ? setOpenMenu(false) : setOpenMenu(true)
+        showMenu ? setShowMenu(false) : setShowMenu(true)
     }    
     return (
        <nav className="nav-user">
            <Search/>
            <Button
-            onClick={showDropDown}
             modifier="hidden-view-desktop"
             modifier={['hidden-view-desktop','padding-left']}
             icon={<FontAwesomeIcon icon={faBars}/>}
@@ -38,11 +36,11 @@ export default function NavUser({}){
             onClick={showDropDown}
             icon={<FontAwesomeIcon icon={faUser}/>} 
             />
-            {
-                openMenu ? <UserMenu/> : null 
-            }
             </div>
            </div>
+            {
+                showMenu ? <UserMenu/> : null 
+            }
        </nav> 
     )
 }

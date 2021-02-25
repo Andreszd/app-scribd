@@ -27,6 +27,12 @@
         padding-right: 0;
         padding-left: 1rem;
     }
+    @media screen and (max-width: 992px){
+        &__text{
+            background-color:red;
+            display: none;
+        } 
+    }
     @media screen and (min-width: 720px){
         cursor: pointer;
         &--hidden-min-width{
@@ -34,6 +40,9 @@
         }
         &--hidden-view-desktop{
              display: none;
+        }
+        &__text{
+            font-size: 1rem; 
         }
         
     }

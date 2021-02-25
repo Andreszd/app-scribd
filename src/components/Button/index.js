@@ -18,16 +18,21 @@ export default function Button({text, modifier, onClick, icon}){
         <>
         {
             modifier ? 
-            <button 
+            <button  
                 onClick={onClick}
                 className={`button button--${modifier}`}>
             {icon}
-            {text}
+            <span className="button__text">
+                {text}
+            </span>
             </button>:
             <button 
             onClick={onClick} className="button">
                {icon}
-               {text}
+            <span className="button__text">
+                {text}
+            </span>
+
             </button>
         }
         </>
