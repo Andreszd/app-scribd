@@ -1,7 +1,6 @@
 import { Switch } from 'react-router-dom';
 import Home from './Pages/Home';
 import LadingPage from './Pages/LadingPage';
-import Upload from './Pages/Upload';
 import { PrivateRoute, PublicRoute } from './routes';
 import './scss/style.scss'
 function App() {

@@ -1,6 +1,6 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Sections from "../components/Sections";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Sections from "../../components/Sections";
 
 export default function LadingPage(){
 
