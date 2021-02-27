@@ -4,7 +4,7 @@ import { faKey, faUser, faInbox, faSearch } from '@fortawesome/free-solid-svg-ic
 
 import './style.scss'
 
-export default function Input({placeholder, type, value, onKeywoard, name, error} = {}){
+export default function Input({placeholder, type, value, onKeywoard, name, error, label} = {}){
 
     const existError = ()=>{
         if (error){
@@ -94,6 +94,26 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                         type="text" 
                         className={existError() ? `field-container__input field-container__input--error`: 'field-container__input'}/>
                     </div>
+                </>
+            )
+        case 'text':
+            return (
+                <>
+                    {label && <label className="field-container__label">{label}</label>}
+                    <div className="field-container">
+                        <input type="text"
+                            className="field-container__input field-container__input--reset-padding"
+                        />
+                    </div>
+                </>
+            )
+        case 'text-area':
+            return (
+                <>
+                    {label && <label className="field-container__label">{label}</label>}
+                    <textarea
+                        className="field-container__input-area"
+                    />
                 </>
             )
         default: 
