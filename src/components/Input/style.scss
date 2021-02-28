@@ -2,17 +2,33 @@
     width: 100%;
     margin-bottom: 1rem;
     position: relative;
+    &__input-area, &__input{
+        border:1px solid #c2c2c2;
+        background-color: transparent;
+        color: var(--white);
+        outline: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    &__input-area{
+        padding: 1rem;
+        min-width: 100px;
+        min-height: 100px;
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+    &__label{
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
     &__input{
+        width: 100%;
         box-sizing: border-box;
         padding-top: .8rem ;
         padding-bottom: .8rem;
-        width: 100%;
         padding-left: 2.5rem;
-        border:1px solid #c2c2c2;
-        border-radius: 5px;
-        outline: none;
-        background-color: transparent;
-        color: var(--white);
         &::placeholder{
             color: var(--white);
             font-weight: 300;
@@ -37,6 +53,10 @@
         }
         &:invalid{
             border-color: red;
+       }
+       &--reset-padding{
+           padding-left: 1rem;
+           padding-right: 1rem;
        }
     }
     &__input:invalid + &__icon{
