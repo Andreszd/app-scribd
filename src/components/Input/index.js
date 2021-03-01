@@ -17,7 +17,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
         case 'submit':
             return <input placeholder={placeholder} 
             type={type} 
-            name={type} 
+            name={name} 
             className="field-container__input-submit"
             value = {value}/>
         case 'password':
@@ -26,7 +26,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                     <div className="field-container">
                         <input placeholder={placeholder} 
                         onChange = {onKeywoard}
-                        name={type} 
+                        name={name} 
                         type="password" 
                         className={existError() ? `field-container__input field-container__input--error`: 'field-container__input'}/>
                         <FontAwesomeIcon  icon={faKey} className='field-container__icon'/>
@@ -46,7 +46,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                     <div className='field-container'>
                         <input placeholder={placeholder} 
                         onChange = {onKeywoard}
-                        name={type} 
+                        name={name} 
                         type="email" 
                         className={existError() ? `field-container__input field-container__input--error`: 'field-container__input'}/>
                         <FontAwesomeIcon  icon={faInbox} 
@@ -67,7 +67,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                     <div className='field-container'>
                         <input placeholder={placeholder} 
                         onChange = {onKeywoard}
-                        name={type} 
+                        name={name} 
                         type="text" 
                         className={existError() ? `field-container__input field-container__input--error`: 'field-container__input'}/>
                         <FontAwesomeIcon  icon={faUser} 
@@ -90,7 +90,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                         className='field-container__icon'/>
                         <input placeholder={placeholder} 
                         onChange = {onKeywoard}
-                        name={type} 
+                        name={name} 
                         type="text" 
                         className={existError() ? `field-container__input field-container__input--error`: 'field-container__input'}/>
                     </div>
@@ -102,6 +102,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                     {label && <label className="field-container__label">{label}</label>}
                     <div className="field-container">
                         <input type="text"
+                            name={name}
                             className="field-container__input field-container__input--reset-padding"
                         />
                     </div>
@@ -113,6 +114,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                     {label && <label className="field-container__label">{label}</label>}
                     <textarea
                         className="field-container__input-area"
+                        name={name}
                     />
                 </>
             )

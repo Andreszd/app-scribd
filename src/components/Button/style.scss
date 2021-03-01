@@ -31,8 +31,7 @@
         padding-left: 1rem;
     }
     @media screen and (max-width: 992px){
-        &__text{
-            background-color:red;
+        &__text--hidden-text-min-width{
             display: none;
         } 
     }

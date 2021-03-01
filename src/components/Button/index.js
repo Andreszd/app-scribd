@@ -22,14 +22,20 @@ export default function Button({text, modifier, onClick, icon}){
                 onClick={onClick}
                 className={`button button--${modifier}`}>
             {icon}
-            <span className="button__text">
+            <span 
+            className={icon ? 'button__text button__text--hidden-text-min-width' : 'button__text'}
+            >
                 {text}
             </span>
             </button>:
             <button 
-            onClick={onClick} className="button">
+            onClick={onClick} 
+            className="button"
+            >
                {icon}
-            <span className="button__text">
+            <span 
+            className={icon ? 'button__text button__text--hidden-text-min-width' : 'button__text'}
+            >
                 {text}
             </span>
 

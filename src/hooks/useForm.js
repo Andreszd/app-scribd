@@ -20,6 +20,7 @@ export default function useForm(form, request){
     }
 
     const handlerChange = evt =>{
+        console.log(evt.target.value)
         setBodyForm({
             ...bodyForm,
             [evt.target.name] : evt.target.value
