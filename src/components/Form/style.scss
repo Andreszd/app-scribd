@@ -22,6 +22,12 @@
         color: var(--white);
         outline: none;
     }
+    &__buttons{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
     @media screen and (min-width: 720px){
         &__button{
             border-bottom: 1px solid transparent;
