@@ -102,9 +102,12 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                     {label && <label className="field-container__label">{label}</label>}
                     <div className="field-container">
                         <input type="text"
+                            onChange={onKeywoard}
                             name={name}
-                            className="field-container__input field-container__input--reset-padding"
-                        />
+                            value={value}
+                            className={existError() ? 
+                            `field-container__input field-container__input--reset-padding field-container__input--error`: 
+                            'field-container__input field-container__input--reset-padding'}/>
                     </div>
                 </>
             )
@@ -114,6 +117,7 @@ export default function Input({placeholder, type, value, onKeywoard, name, error
                     {label && <label className="field-container__label">{label}</label>}
                     <textarea
                         className="field-container__input-area"
+                        onChange={onKeywoard}
                         name={name}
                     />
                 </>

@@ -7,8 +7,10 @@ import './style.scss'
 export default function DropZone({setIsFileAccepted, setRefFile}){
     
     const onDrop = useCallback((acceptedFiles)=>{
-       console.log(acceptedFiles.length)  
-       if ( acceptedFiles.length === 1 ) setIsFileAccepted(true)
+       console.log(acceptedFiles)  
+        if ( acceptedFiles.length === 1 ) {
+            setRefFile(acceptedFiles[0])
+        }
     })
 
     const onDropRejected = useCallback((deniedFile)=>{

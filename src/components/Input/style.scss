@@ -17,6 +17,9 @@
         min-width: 100%;
         max-width: 100%;
         width: 100%;
+        &:focus{
+            border-color: var(--cyan);
+        }
     }
     &__label{
         display: inline-block;
@@ -32,6 +35,9 @@
         &::placeholder{
             color: var(--white);
             font-weight: 300;
+        }
+        &:focus{
+            border-color: var(--cyan);
         }
         &-submit{
             width: 100%;

@@ -20,7 +20,6 @@ export default function useForm(form, request){
     }
 
     const handlerChange = evt =>{
-        console.log(evt.target.value)
         setBodyForm({
             ...bodyForm,
             [evt.target.name] : evt.target.value
@@ -56,6 +55,16 @@ export default function useForm(form, request){
         }
         return error
     }
+    const validateFieldTitle = value =>{
+        let error = {}
+        error.type = 'title'
+        error.count = 0
+        if( value.trim().length === 0){
+            error.message = 'Field not be empty' 
+            error.count+=1
+        }
+        return error
+    }
     const validateField = (typeField = '', content, errors = {})=>{
         let error = null 
         if(typeField === 'email') {
@@ -72,7 +81,10 @@ export default function useForm(form, request){
             error = validateUsername(content) 
             errors['username'] = error
         }
-
+        if(typeField === 'title'){
+            error = validateFieldTitle(content)
+            errors['title'] = error
+        }
     }
     const hasAnyError = (errors = {}) =>{
         const listErrors = Object.values(errors).filter(error => error.count > 0)
@@ -86,5 +98,5 @@ export default function useForm(form, request){
         })
         return errors
     }
-    return { handlerChange, validateFields, errors, handlerSubmit }
+    return { handlerChange, validateFields, errors, handlerSubmit, bodyForm }
 }
