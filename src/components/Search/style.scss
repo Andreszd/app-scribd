@@ -18,6 +18,9 @@
         &::focus &::placeholder{
             color: #c2c2c2;
         }
+        &:focus {
+            border-color: var(--cyan);
+        }
     }
     &__button{
         width: 50px;  
@@ -35,6 +38,9 @@
                 cursor: pointer;
             }
         }
+    }
+    &__input:focus + &__button{
+        border-color: var(--cyan);
     }
     @media screen and (min-width: 720px){
         width: 60%;

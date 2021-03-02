@@ -2,9 +2,8 @@ import { useState } from 'react';
 
 import DropZone from '../../components/DropZone'
 import FormUploadFile from '../../components/Form/FormUploadFile';
+import IconFilePreview from '../../components/IconFilePreview';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFile } from '@fortawesome/free-solid-svg-icons'
 
 import './style.scss'
 
@@ -25,14 +24,16 @@ export default function Upload({history}){
                 <span className="file-upload__info">Supported file Types: </span> 
             </>
             : 
-            <div className="file-upload-form">
-                <span className="file-upload-form__preview">
-                   < FontAwesomeIcon icon={faFile}/>
+            <div className="file-upload-container-form">
+                <span className="file-upload-container-form__preview">
+                    <IconFilePreview/>
                 </span>
+                <div className="file-upload-container-form__fields">
                 <FormUploadFile 
                 file={refFile}
                 changeFile={setRefFile} 
                 /> 
+                </div>
             </div>
         }
             </section>

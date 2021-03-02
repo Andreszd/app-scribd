@@ -8,7 +8,7 @@ export default function UserMenu(){
             <h2 className="menu-user__title">Hi User !</h2>
             <ul className="menu-links">
                 {links.map(link => 
-                <li className="menu-links__item">
+                <li className="menu-links__item" key={link.id}>
                     <Link className="menu-links__link"
                         to={link.path}
                     >{link.name}</Link>
