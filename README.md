@@ -1,4 +1,4 @@
-# PROJECT DISCONTINUED
+# DISCONTINUED PROJECT 
 This project is discontinued because when I built this project I was too novato using this framework, so there're too many bad practices
 
 # Summary Project
